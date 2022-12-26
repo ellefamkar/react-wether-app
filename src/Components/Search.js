@@ -66,10 +66,10 @@ const Search = () => {
     }
     
     let form = (
-        <form onSubmit={submitHandler}>
-                <input type="search" onChange={searchResult} />
-                <button type="submit">Search</button>
-            </form>
+        <form className="search-form" onSubmit={submitHandler}>
+            <input type="search" onChange={searchResult} placeholder="Type your city name here"/>
+            <button type="submit">Search</button>
+        </form>
     );
 
     const defaults = {
@@ -99,7 +99,6 @@ const Search = () => {
         return (
            <>
             {form}
-            <p>Search for your city</p>
             <ReactAnimatedWeather
                 icon={defaults.icon}
                 color={defaults.color}
