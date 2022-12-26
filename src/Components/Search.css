@@ -2,3 +2,21 @@
     list-style: none;
 }
 
+.search-form {
+    margin-bottom: 2rem;
+}
+
+.search-form input{
+    width:74%;
+    margin-right: 1%;
+    padding: 0.5rem;
+}
+
+.search-form button{
+    width:25%;
+    padding: 0.5rem;
+}
+
+.animated-weather{
+    margin-top:2rem;
+}
