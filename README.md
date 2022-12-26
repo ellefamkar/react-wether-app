@@ -1,4 +1,4 @@
-# Welcome React Weather Application 👋
+# Welcome to my React Weather Application 👋
 
 ## Available Scripts
 
