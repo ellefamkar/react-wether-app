@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
 import "./Search.css";
-import ReactAnimatedWeather from 'react-animated-weather'; 
 
 const Search = () => {
     let[city, setCity] = useState("shiraz");
@@ -40,13 +39,6 @@ const Search = () => {
         </form>
     );
 
-    const defaults = {
-        icon: 'CLEAR_DAY',
-        color: 'goldenrod',
-        size: 112,
-        animate: true
-      };
-
     if(loaded){
         return (
             <>
@@ -67,12 +59,6 @@ const Search = () => {
         return (
            <>
             {form}
-            <ReactAnimatedWeather
-                icon={defaults.icon}
-                color={defaults.color}
-                size={defaults.size}
-                animate={defaults.animate}
-            />
            </>
         );
     }

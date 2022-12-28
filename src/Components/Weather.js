@@ -22,6 +22,13 @@ import ReactAnimatedWeather from 'react-animated-weather';
 //         setCity(event.target.value);
 //     }
 
+// const defaults = {
+//     icon: 'CLEAR_DAY',
+//     color: 'goldenrod',
+//     size: 112,
+//     animate: true
+//   };
+
 //     return(
 //         <>
 //          <form onSubmit={handleSubmit}>
@@ -31,6 +38,13 @@ import ReactAnimatedWeather from 'react-animated-weather';
 //          {/* <h2>{message}</h2> */}
 //          <Weather city={message} />
 
+
+{/* <ReactAnimatedWeather
+icon={defaults.icon}
+color={defaults.color}
+size={defaults.size}
+animate={defaults.animate}
+/> */}
 //         </>
 //     )
 // }
