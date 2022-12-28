@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import FormattedDate from "./FormattedDate";
 import "./Search.css";
 
 const Search = () => {
@@ -14,6 +15,7 @@ const Search = () => {
         setWeather({
             name: response.data.city,
             temperature: response.data.temperature.current,
+            date: new Date(response.data.time * 1000),
             description: response.data.condition.description,
             humidity: response.data.temperature.humidity,
             speed: response.data.wind.speed,
@@ -57,7 +59,7 @@ const Search = () => {
                     </div>
                     <h2 className="weather-temperature text-white text-center mb-0">{weather.temperature}℃</h2>
                     <ul className="weather-description text-white p-0">
-                        <li>{weather.description} 7:20 Pm</li>
+                        <li>{weather.description} <FormattedDate date={weather.date} /></li>
                         <li>Humidity: {weather.humidity}</li>
                     </ul>
                 </div>
