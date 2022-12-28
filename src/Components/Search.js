@@ -5,29 +5,28 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import "./Search.css";
 
 const Search = () => {
-    let[city, setCity] = useState("shiraz");
-    let[loaded, setLoaded] = useState(false);
-    let[weather, setWeather] = useState({});
+    let[city, setCity] = useState("Sydney");
+    let[loaded,setLoaded] = useState(false)
+    let[weather, setWeather] = useState();
 
-    const displayWeather = (response) => {
+    const handleResponse = (response) => {
         setLoaded(true);
         setWeather({
-            name: response.data.name,
-            temperature: response.data.main.temp,
-          description: response.data.weather[0].description,
-            humidity: response.data.main.humidity,
+            name: response.data.city,
+            temperature: response.data.temperature.current,
+            description: response.data.condition.description,
+            humidity: response.data.temperature.humidity,
             speed: response.data.wind.speed,
-            icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-    
-        })
+            icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
+        });
     };
 
     const submitHandler = (event) =>{
         event.preventDefault();
-        let apiKey = '3df2faaa654dfbe28b4e2b8d1ff69774';
+        let apiKey = 'f0bata7385ff184aeb7o2efc0a37f732';
         let units = "metric";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-        axios.get(apiUrl).then(displayWeather);
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(handleResponse);
     };
 
     const searchResult = (event) =>{
@@ -65,9 +64,11 @@ const Search = () => {
             </>
         );
     }else{
+    
         return (
            <>
             {form}
+            
            </>
         );
     }

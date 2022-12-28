@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     <div className="App">
-      <Search />
+      <Search defaultCity="sydney" />
     </div>
     <small className="text-dark"> 
       <a href="https://github.com/ellefamkar/react-wether-app" target="_blank" rel="noreferrer" className="text-dark text-decoration-none">Open-source </a>
