@@ -3,38 +3,6 @@ import axios from "axios";
 import "./Search.css";
 import ReactAnimatedWeather from 'react-animated-weather'; 
 
-// import Weather from "./Weather";
-// import styled from 'styled-component';
-// const MyContainer = styled.div`
-// width: 100%;
-// background-color: #000000;
-// `
-// const Search = () => {
-
-//     let[city, setCity] = useState("");
-//     let[message, setMessage] = useState("");
-
-//     const handleSubmit = (event) =>{
-//         event.preventDefault();
-//         setMessage(city);
-//     }
-//     const handleChange = (event)=>{
-//         setCity(event.target.value);
-//     }
-
-//     return(
-//         <>
-//          <form onSubmit={handleSubmit}>
-//             <input type="search" onChange={handleChange}/>
-//             <input type="submit" />
-//          </form>
-//          {/* <h2>{message}</h2> */}
-//          <Weather city={message} />
-
-//         </>
-//     )
-// }
-
 const Search = () => {
     let[city, setCity] = useState("shiraz");
     let[loaded, setLoaded] = useState(false);
@@ -67,8 +35,8 @@ const Search = () => {
     
     let form = (
         <form className="search-form" onSubmit={submitHandler}>
-            <input type="search" onChange={searchResult} placeholder="Type your city name here"/>
-            <button type="submit">Search</button>
+            <input type="search" className="border-0 rounded" onChange={searchResult} placeholder="Type your city name here"/>
+            <button type="submit" className="border-0 rounded">Search</button>
         </form>
     );
 
