@@ -14,7 +14,7 @@ const Search = () => {
         setWeather({
             name: response.data.name,
             temperature: response.data.main.temp,
-            description: response.data.weather[0].description,
+          description: response.data.weather[0].description,
             humidity: response.data.main.humidity,
             speed: response.data.wind.speed,
             icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
@@ -51,14 +51,15 @@ const Search = () => {
         return (
             <>
                 {form}
-                <div className="search-container">
-                    <h3>{weather.name}</h3>
-                    <ul>
-                        <li>{weather.temperature}</li>
-                        <li>{weather.description}</li>
-                        <li>{weather.humidity}</li>
-                        <li>{weather.speed}</li>
-                        <li><img src={weather.icon}  alt={weather.description}/></li>
+                <div className="weather-details position-relative mt-4">
+                    <h1 className="weather-name text-white position-absolute">{weather.name}</h1>
+                    <div className="weather-icon text-center">
+                        <img src={weather.icon}  alt={weather.description}/>
+                    </div>
+                    <h2 className="weather-temperature text-white text-center mb-0">{weather.temperature}℃</h2>
+                    <ul className="weather-description text-white p-0">
+                        <li>{weather.description} 7:20 Pm</li>
+                        <li>Humidity: {weather.humidity}</li>
                     </ul>
                 </div>
             </>
