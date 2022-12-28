@@ -36,8 +36,8 @@ const Search = () => {
     
     let form = (
         <form className="search-form row border" onSubmit={submitHandler}>
-            <div className="col-10">
-                <input type="search" className="border-0 rounded w-100 bg-transparent text-white" onChange={searchResult} placeholder="Type your city name here"/>
+            <div className="col-10 pe-0">
+                <input type="search" className="border-0 pe-0 rounded w-100 bg-transparent text-white" onChange={searchResult} placeholder="Type your city name here"/>
             </div>
             <div className="col-2">
                 <button type="submit" className="border-0 rounded w-100 bg-transparent">

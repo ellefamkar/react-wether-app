@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <Search />
     </div>
-    <small> 
-      <a href="https://github.com/ellefamkar/react-wether-app" target="_blank" rel="noreferrer">Open-source </a>
+    <small className="text-dark"> 
+      <a href="https://github.com/ellefamkar/react-wether-app" target="_blank" rel="noreferrer" className="text-dark text-decoration-none">Open-source </a>
       by Elle Famkar
     </small>
     </>
