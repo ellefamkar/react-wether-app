@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import "./Search.css";
 
 const Search = () => {
@@ -36,6 +38,8 @@ const Search = () => {
         <form className="search-form" onSubmit={submitHandler}>
             <input type="search" className="border-0 rounded" onChange={searchResult} placeholder="Type your city name here"/>
             <button type="submit" className="border-0 rounded">Search</button>
+            <i className="fa-solid fa-user"></i>
+            <FontAwesomeIcon icon={faSearch} />
         </form>
     );
 
