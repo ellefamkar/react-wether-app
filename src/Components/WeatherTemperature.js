@@ -21,8 +21,8 @@ const WeatherTemperature = ({celsius}) => {
         return (
             <>
                 {Math.round(celsius)} 
-                <span className='mb-4 font-sm temperature-type'>
-                    <a href='/' className='text-white text-decoration-none'> ℃</a>| <a href='/' className='text-white text-decoration-none' onClick={convertToFahrenheit}> ℉ </a>
+                <span className='mb-4 font-sm temperature-type text-white'>
+                 ℃ | <a href='/' className='text-white text-decoration-none' onClick={convertToFahrenheit}> ℉ </a>
                 </span>
             </>
         );
@@ -30,8 +30,8 @@ const WeatherTemperature = ({celsius}) => {
         return (
             <>
                 {Math.round(farenheit())} 
-                <span className='mb-4 font-sm temperature-type'>
-                    <a href='/' className='text-white text-decoration-none' onClick={convertToCelsius}> ℃ </a> | <a href='/' className='text-white text-decoration-none' > ℉ </a>
+                <span className='mb-4 font-sm temperature-type text-white'>
+                    <a href='/' className='text-white text-decoration-none' onClick={convertToCelsius}> ℃ </a> |  ℉
                 </span>
             </>
         );
