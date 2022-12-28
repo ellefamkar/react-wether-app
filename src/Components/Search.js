@@ -2,17 +2,16 @@ import React, {useState} from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import FormattedDate from "./FormattedDate";
+import Weather from "./Weather";
 import "./Search.css";
 
-const Search = () => {
-    let[city, setCity] = useState("Sydney");
-    let[loaded,setLoaded] = useState(false)
-    let[weather, setWeather] = useState();
+const Search = ({defaultCity}) => {
+    let[city, setCity] = useState(defaultCity);
+    let[weather, setWeather] = useState({loaded:false});
 
     const handleResponse = (response) => {
-        setLoaded(true);
         setWeather({
+            loaded:true,
             name: response.data.city,
             temperature: response.data.temperature.current,
             date: new Date(response.data.time * 1000),
@@ -23,22 +22,26 @@ const Search = () => {
         });
     };
 
-    const submitHandler = (event) =>{
-        event.preventDefault();
-        let apiKey = 'f0bata7385ff184aeb7o2efc0a37f732';
+    const search = () =>{
+        const apiKey = 'f0bata7385ff184aeb7o2efc0a37f732';
         let units = "metric";
         let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
         axios.get(apiUrl).then(handleResponse);
+    }
+
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        search();
     };
 
-    const searchResult = (event) =>{
+    const handleCitySearch = (event) =>{
         setCity(event.target.value);
     }
     
     let form = (
-        <form className="search-form row border" onSubmit={submitHandler}>
+        <form className="search-form row border" onSubmit={handleSubmit}>
             <div className="col-10 pe-0">
-                <input type="search" className="border-0 pe-0 rounded w-100 bg-transparent text-white" onChange={searchResult} placeholder="Type your city name here"/>
+                <input type="search" className="border-0 pe-0 rounded w-100 bg-transparent text-white" onChange={handleCitySearch} placeholder="Type your city name here"/>
             </div>
             <div className="col-2">
                 <button type="submit" className="border-0 rounded w-100 bg-transparent">
@@ -48,31 +51,16 @@ const Search = () => {
         </form>
     );
 
-    if(loaded){
+    if(weather.loaded){
         return (
             <>
                 {form}
-                <div className="weather-details mt-4">
-                    <h1 className="weather-name text-white position-absolute">{weather.name}</h1>
-                    <div className="weather-icon text-center">
-                        <img src={weather.icon}  alt={weather.description}/>
-                    </div>
-                    <h2 className="weather-temperature text-white text-center mb-0">{weather.temperature}℃</h2>
-                    <ul className="weather-description text-white p-0">
-                        <li>{weather.description} <FormattedDate date={weather.date} /></li>
-                        <li>Humidity: {weather.humidity}</li>
-                    </ul>
-                </div>
+                <Weather weather={weather} />
             </>
         );
     }else{
-    
-        return (
-           <>
-            {form}
-            
-           </>
-        );
+        search();
+        return "Loading";
     }
 };
 
