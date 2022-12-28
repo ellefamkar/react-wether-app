@@ -1,6 +1,7 @@
 .weather-description {
     list-style: none;
     font-size: 13px;
+    z-index: 1;
 }
 
 .search-form {
@@ -44,4 +45,9 @@
     text-align:center;
     font-size: 10rem;
     opacity: 0.2;
+    z-index: -1;
+}
+
+.temperature-type{
+    font-size: 18px;
 }

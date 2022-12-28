@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 const Weather = ({weather})=>{
     return(
@@ -9,7 +10,9 @@ const Weather = ({weather})=>{
                     <div className="weather-icon text-center">
                         <WeatherIcon code={weather.icon} />
                     </div>
-                    <h2 className="weather-temperature text-white text-center mb-0">{weather.temperature}℃</h2>
+                    <h2 className="weather-temperature text-white text-center mb-0">
+                        <WeatherTemperature celsius={weather.temperature} />
+                    </h2>
                     <ul className="weather-description text-white p-0">
                         <li>{weather.description} <FormattedDate date={weather.date} /></li>
                         <li>Humidity: {weather.humidity}</li>
