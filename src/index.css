@@ -11,6 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   background: center / cover no-repeat url("../public/images/snow-5.jpg");
+  position:relative;
+  overflow: hidden;
 }
 
 code {

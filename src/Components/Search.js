@@ -50,7 +50,7 @@ const Search = () => {
         return (
             <>
                 {form}
-                <div className="weather-details position-relative mt-4">
+                <div className="weather-details mt-4">
                     <h1 className="weather-name text-white position-absolute">{weather.name}</h1>
                     <div className="weather-icon text-center">
                         <img src={weather.icon}  alt={weather.description}/>
