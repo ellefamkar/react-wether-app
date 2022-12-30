@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./WeatherBackground.css";
 import snow from "../images/snow.jpg";
 import clearSky from "../images/clearSky.jpg";

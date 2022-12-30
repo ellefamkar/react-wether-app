@@ -18,7 +18,7 @@ const Weather = ({weather})=>{
             </h2>
             <ul className="weather-description text-white p-0">
                 <li>{weather.description} <FormattedDate date={weather.date} /></li>
-                <li>Humidity: {weather.humidity}</li>
+                {/* <li>Humidity: {weather.humidity}</li> */}
             </ul>
         </div>
         </>
