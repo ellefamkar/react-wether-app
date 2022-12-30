@@ -4,18 +4,18 @@ import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import axios from "axios";
 
-const WeatherForecast = ({name}) => {
+const WeatherForecast = ({coordinates}) => {
     // let[city, setCity]=useState(name);
 
-    
-        const handleResponse = (response) =>{
-            console.log(response.data)
-        };
+    const handleResponse = (response) =>{
+        console.log(response.data)
+    };
 
     const apiKey = 'f0bata7385ff184aeb7o2efc0a37f732';
     let units = "metric";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${name}&key=${apiKey}&units=${units}`;
-    // https://api.shecodes.io/weather/v1/forecast?lon={lon}&lat={lat}&key={key}
+    let latitude = coordinates.latitude;
+    let longitude = coordinates.longitude;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
 
 

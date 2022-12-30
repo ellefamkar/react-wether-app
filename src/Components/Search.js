@@ -13,9 +13,11 @@ const Search = ({defaultCity}) => {
     let[weather, setWeather] = useState({loaded:false});
 
     const handleResponse = (response) => {
+        console.log(response.data);
         setWeather({
             loaded:true,
             name: response.data.city,
+            coordinates: response.data.coordinates,
             temperature: response.data.temperature.current,
             date: new Date(response.data.time * 1000),
             description: response.data.condition.description,
@@ -59,7 +61,7 @@ const Search = ({defaultCity}) => {
             <>
                 {form}
                 <Weather weather={weather} />
-                <WeatherForecast name={weather.name} />
+                <WeatherForecast coordinates={weather.coordinates} />
             </>
         );
     }else{
