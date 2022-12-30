@@ -1,7 +1,6 @@
 import React from 'react';
 // import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
-import WeatherTemperature from "./WeatherTemperature";
 import axios from "axios";
 
 const WeatherForecast = ({coordinates}) => {
@@ -21,21 +20,22 @@ const WeatherForecast = ({coordinates}) => {
 
     return (
         <div className="container">
-            <div className='row'>
-                <div className='forecast-details col-1 mt-4'>
-                    {/* <FormattedDate date="Feb" /> */}
-                    <div className="weather-icon text-center">
-                        <WeatherIcon code="clear-sky-day" />
+            <div className='row mt-2'>
+                <div className='forecast-details col-2'>
+                    <p className='mb-2 text-white'>Thu</p>
+                    <div className="text-center mb-1">
+                        <WeatherIcon code="clear-sky-day" size={24} />
                     </div>
-                    <h2 className="d-flex text-white text-center mb-0">
-                        <WeatherTemperature celsius={10} />
-                        <WeatherTemperature celsius={2} />
-                    </h2>
-                    <ul className="text-white p-0">
-                        <li>"Cloudy"</li>
-                    </ul>
-
+                    <p className="d-flex justify-content-between text-white text-center mb-0">
+                        <span className='temperature-max'>
+                            19°  
+                        </span>
+                        <span className='temperature-min opacity-50'>
+                             13°
+                        </span>
+                    </p>
                 </div>
+                
             </div>
         </div>
     );

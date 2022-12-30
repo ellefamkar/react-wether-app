@@ -1,7 +1,7 @@
 import React from "react";
 import ReactAnimatedWeather from "react-animated-weather"
 
-const WeatherIcon = ({code}) =>{
+const WeatherIcon = ({code,size}) =>{
     const codeMaping = {
         "clear-sky-day": "CLEAR_DAY",
         "clear-sky-night": "CLEAR_NIGHT",
@@ -26,7 +26,7 @@ const WeatherIcon = ({code}) =>{
         <ReactAnimatedWeather
         icon={codeMaping[code]}
         color="white"
-        size={64}
+        size={size}
         animate={true}
         />
     );

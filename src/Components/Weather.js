@@ -12,7 +12,7 @@ const Weather = ({weather})=>{
         <div className="weather-details mt-4">
             <h1 className="weather-name text-white position-absolute">{weather.name}</h1>
             <div className="weather-icon text-center">
-                <WeatherIcon code={weather.icon} />
+                <WeatherIcon code={weather.icon} size={64} />
             </div>
             <h2 className="weather-temperature text-white text-center mb-0">
                     <WeatherTemperature celsius={weather.temperature} />
