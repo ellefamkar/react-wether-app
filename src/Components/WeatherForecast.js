@@ -16,7 +16,7 @@ const WeatherForecast = ({coordinates}) => {
         return (
             <div className="container">
                 <div className='row mt-2'>
-                    <WeatherForecastDay data={forecast} />
+                    <WeatherForecastDay data={forecast[0]} />
                 </div>
             </div>
         );
