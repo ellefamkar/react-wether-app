@@ -3,6 +3,8 @@ import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Weather from "./Weather";
+import { MagnifyingGlass } from "react-loader-spinner";
+
 import "./Search.css";
 
 const Search = ({defaultCity}) => {
@@ -60,7 +62,18 @@ const Search = ({defaultCity}) => {
         );
     }else{
         search();
-        return "Loading";
+        return (
+            <MagnifyingGlass
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="MagnifyingGlass-loading"
+                wrapperStyle={{}}
+                wrapperClass="MagnifyingGlass-wrapper"
+                glassColor = 'transparent'
+                color = '#eaeaea'
+                />
+        );
     }
 };
 
