@@ -26,10 +26,10 @@ This is under construction! So let's check it in a few days when it is completed
 
 Remember that "Every day is a learning day", so let's checkout the requirements to start such project
 
-<!-- ### Screenshot -->
+ ### Screenshot 
 
-<!-- ![](./images/3-column-card-screenshot.png)
-![](./images/3-column-card-screenshot-mobile.png) -->
+![](./src/images/Screenshot%20(166).png)
+
 
 
 ### Links
