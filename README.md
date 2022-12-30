@@ -60,23 +60,54 @@ This projects helped me being more familiar with the details of react and how to
 To see parts of my codes and see how you can add code snippets, see below:
 
 ``` JSX
-  const Search = () => {
-    let[city, setCity] = useState("shiraz");
+  
+const WeatherForecast = ({coordinates}) => {
     let[loaded, setLoaded] = useState(false);
-    let[weather, setWeather] = useState({});
+    let[forecast, setForecast]=useState(null);
 
-    const displayWeather = (response) => {
+    useEffect(() => {
+        setLoaded(false);
+      }, [coordinates]);
+
+      
+    const handleResponse = (response) =>{
+        setForecast(response.data.daily);
         setLoaded(true);
-        setWeather({
-            name: response.data.name,
-            temperature: response.data.main.temp,
-            description: response.data.weather[0].description,
-            humidity: response.data.main.humidity,
-            speed: response.data.wind.speed,
-            icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-    
-        })
     };
+
+    const load = () =>{
+        const apiKey = 'f0bata7385ff184aeb7o2efc0a37f732';
+        let units = "metric";
+        let latitude = coordinates.latitude;
+        let longitude = coordinates.longitude;
+        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(handleResponse);
+    }
+
+    if(loaded){
+        return (
+            <div className="container">
+                <div className='row mt-2'>
+                    {
+                        forecast.map((dailyForecast, index)=>{
+                            if( index < 6 ){
+                                return (<div className='forecast-details col-2' key={index}>
+                                 <WeatherForecastDay data={dailyForecast} />
+                                </div>
+                                );
+                            }else{
+                                return null;
+                            }
+                        })
+                    }
+                </div>
+            </div>
+        );
+    }else{
+        load();
+        return null;
+    }
+};
 ```
 ```css
     .App {
