@@ -7,7 +7,7 @@ import WeatherBackground from "./WeatherBackground";
 const Weather = ({weather})=>{
     return(
         <>
-        <WeatherBackground description={weather.description} />
+        <WeatherBackground description={weather.icon} />
         <div className="weather-details mt-4">
             <h1 className="weather-name text-white position-absolute">{weather.name}</h1>
             <div className="weather-icon text-center">
