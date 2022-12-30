@@ -6,11 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: center / cover no-repeat url("../public/images/snow-5.jpg");
+  /* background: center / cover no-repeat url("../public/images/snow-5.jpg"); */
   position:relative;
   overflow: hidden;
 }
