@@ -1,22 +1,30 @@
 import React, { useState} from 'react';
 // import FormattedDate from "./FormattedDate";
-import WeatherForecastDay from './WeatherForecastDay';
 import axios from "axios";
+import WeatherForecastDay from './WeatherForecastDay';
 
 const WeatherForecast = ({coordinates}) => {
     let[loaded, setLoaded] = useState(false);
     let[forecast, setForecast]=useState(null);
 
     const handleResponse = (response) =>{
-        setLoaded(true);
         setForecast(response.data.daily);
+        setLoaded(true);
     };
 
     if(loaded){
         return (
             <div className="container">
                 <div className='row mt-2'>
-                    <WeatherForecastDay data={forecast[0]} />
+                    {
+                        forecast.map((dailyForecast, index)=>{
+                            if( index < 6 ){
+                                return <div className='forecast-details col-2' key={index}>
+                                 <WeatherForecastDay data={dailyForecast} />
+                                </div>
+                            }
+                        })
+                    }
                 </div>
             </div>
         );

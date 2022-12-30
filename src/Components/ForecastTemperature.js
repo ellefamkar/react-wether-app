@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ForecastTemperature = ({temperature}) => {
-    console.log(temperature);
     const maxTemperature = () =>{
         let max = Math.round(temperature.maximum);
         return `${max}°`;
