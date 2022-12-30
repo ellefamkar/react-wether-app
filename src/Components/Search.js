@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Weather from "./Weather";
 import { MagnifyingGlass } from "react-loader-spinner";
+import WeatherForecast from "./WeatherForecast";
 
 import "./Search.css";
 
@@ -58,6 +59,7 @@ const Search = ({defaultCity}) => {
             <>
                 {form}
                 <Weather weather={weather} />
+                <WeatherForecast name={weather.name} />
             </>
         );
     }else{
