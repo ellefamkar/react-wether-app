@@ -4,6 +4,7 @@ import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherBackground from "./WeatherBackground";
 import WeatherForecast from "./WeatherForecast";
+import "./Weather.css";
 
 const Weather = ({weather})=>{
     return(

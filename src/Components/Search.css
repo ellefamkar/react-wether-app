@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Averia+Sans+Libre:ital,wght@0,300;0,700;1,300&family=Fredericka+the+Great&family=Monoton&family=Rubik+80s+Fade&family=Rubik+Bubbles&display=swap');
+
+/* :root {
+  font-family: 'Averia Gruesa Libre', cursive;
+font-family: 'Averia Sans Libre', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Rubik 80s Fade', cursive;
+font-family: 'Rubik Bubbles', cursive;
+} */
+
 .weather-description {
     list-style: none;
     font-size: 13px;
     z-index: 1;
+    font-family: 'Averia Sans Libre', cursive;
 }
 
 .search-form {
@@ -34,7 +46,8 @@
 }
 
 .weather-temperature{
-    font-size: 4rem;
+    font-size: 5rem;
+    font-family: 'Averia Sans Libre', cursive;
     /* font-weight: 300; */
 }
 
@@ -44,7 +57,7 @@
     right:0;
     text-align:center;
     font-size: 10rem;
-    opacity: 0.2;
+    opacity: 0.1;
     z-index: -1;
 }
 
