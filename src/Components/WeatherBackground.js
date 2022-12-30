@@ -2,11 +2,11 @@ import React from 'react';
 import "./WeatherBackground.css";
 import snow from "../images/snow.jpg";
 import clearSky from "../images/clearSky.jpg";
-import cloudy from "../images/cloudy.jpg";
-import scatteredCloud from "../images/scatteredCloud.jpg";
-import rain from "../images/rain.jpg";
+import cloudy from "../images/cloudy-1.jpg";
+import scatteredCloud from "../images/scatteredClouds.jpg";
+import rain from "../images/rain.webp";
 import thunderStorm from "../images/thunderStorm.jpg";
-import mist from "../images/mist.jpg";
+import fog from "../images/fog-1.jpg";
 
 const WeatherBackground = ({description}) => {
     const codeMaping = {
@@ -26,8 +26,8 @@ const WeatherBackground = ({description}) => {
         "thunderstorm-night": "thunderstorm",
         "snow-day": "snow",
         "snow-night": "snow",
-        "mist-day": "mist",
-        "mist-night": "mist"
+        "mist-day": "fog",
+        "mist-night": "fog"
     };
     if(codeMaping[description] === "clear-sky"){
         return (
@@ -59,10 +59,10 @@ const WeatherBackground = ({description}) => {
                 <img src={rain} alt={description} />
             </div>
         );
-    }else if(codeMaping[description] === "mist"){
+    }else if(codeMaping[description] === "fog"){
         return (
             <div className='Weather-bg-container'>
-                <img src={mist} alt={description} />
+                <img src={fog} alt={description} />
             </div>
         );
     }else{
