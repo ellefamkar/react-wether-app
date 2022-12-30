@@ -47,8 +47,7 @@ const WeatherBackground = ({description}) => {
                 <img src={scatteredCloud} alt={description} />
             </div>
         );
-    }
-    else if(codeMaping[description] === "snow"){
+    }else if(codeMaping[description] === "snow"){
         return (
             <div className='Weather-bg-container'>
                 <img src={snow} alt={description} />
