@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 // import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import WeatherForecastDay from './WeatherForecastDay';
@@ -7,6 +7,11 @@ const WeatherForecast = ({coordinates}) => {
     let[loaded, setLoaded] = useState(false);
     let[forecast, setForecast]=useState(null);
 
+    useEffect(() => {
+        setLoaded(false);
+      }, [coordinates]);
+
+      
     const handleResponse = (response) =>{
         setForecast(response.data.daily);
         setLoaded(true);
