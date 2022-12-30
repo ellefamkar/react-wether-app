@@ -24,9 +24,10 @@ const WeatherForecast = ({coordinates}) => {
                     {
                         forecast.map((dailyForecast, index)=>{
                             if( index < 6 ){
-                                return <div className='forecast-details col-2' key={index}>
+                                return (<div className='forecast-details col-2' key={index}>
                                  <WeatherForecastDay data={dailyForecast} />
                                 </div>
+                                );
                             }
                         })
                     }
