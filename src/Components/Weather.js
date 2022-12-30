@@ -3,6 +3,7 @@ import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherBackground from "./WeatherBackground";
+import WeatherForecast from "./WeatherForecast";
 
 const Weather = ({weather})=>{
     return(
@@ -20,6 +21,7 @@ const Weather = ({weather})=>{
                 <li>{weather.description} <FormattedDate date={weather.date} /></li>
                 {/* <li>Humidity: {weather.humidity}</li> */}
             </ul>
+            <WeatherForecast />
         </div>
         </>
     );
