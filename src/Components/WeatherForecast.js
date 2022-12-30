@@ -8,7 +8,6 @@ const WeatherForecast = ({coordinates}) => {
     let[forecast, setForecast]=useState(null);
 
     const handleResponse = (response) =>{
-        console.log(response.data.daily);
         setLoaded(true);
         setForecast(response.data.daily);
     };
@@ -28,6 +27,7 @@ const WeatherForecast = ({coordinates}) => {
         let longitude = coordinates.longitude;
         let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${units}`;
         axios.get(apiUrl).then(handleResponse);
+        return null;
     }
 };
 

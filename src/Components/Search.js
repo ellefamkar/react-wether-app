@@ -13,7 +13,6 @@ const Search = ({defaultCity}) => {
     let[weather, setWeather] = useState({loaded:false});
 
     const handleResponse = (response) => {
-        console.log(response.data);
         setWeather({
             loaded:true,
             name: response.data.city,

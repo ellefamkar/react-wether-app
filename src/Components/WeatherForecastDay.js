@@ -1,7 +1,8 @@
 import React from 'react';
 import WeatherIcon from "./WeatherIcon";
 
-const WeatherForecastDay = () => {
+const WeatherForecastDay = ({data}) => {
+    console.log(data);
     return (
         <div className='forecast-details col-2'>
             <p className='mb-2 text-white'>Thu</p>
