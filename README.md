@@ -28,8 +28,9 @@ Remember that "Every day is a learning day", so let's checkout the requirements 
 
  ### Screenshot 
 
-![](./src/images/Screenshot%20(166).png)
-
+![](./src/images/screenshot-desktop.png)
+![](./src/images/screenshot-tablet.png)
+![](./src/images/screenshot-mobile.png)
 
 
 ### Links
