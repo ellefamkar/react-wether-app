@@ -21,17 +21,14 @@ In the project directory, you can run:
 
 ## Overview
 
-Thanks for checking out my weather app project which was inspired by [SheCodes React](https://www.shecodes.io/). 
-This is under construction! So let's check it in a few days when it is completed! and enjoy it!
-
-Remember that "Every day is a learning day", so let's checkout the requirements to start such project
+Thanks for checking out my weather app project which was inspired by [SheCodes React](https://www.shecodes.io/).
+Remember that "Every day is a learning day" and try to learn from everyone! 
 
  ### Screenshot 
 
 ![](./src/images/screenshot-desktop.png)
 ![](./src/images/screenshot-tablet.png)
 ![](./src/images/screenshot-mobile.png)
-
 
 ### Links
 
@@ -46,6 +43,10 @@ The first think to do is to look for your perfect design! So let's checkout [dri
 ### Built with
 
 - Reactjs
+- SheCodes Weather API
+- Axios
+- bootstrap npm package
+- ReactAnimatedWeather
 - Semantic HTML5 markup
 - CSS
 - Flexbox
