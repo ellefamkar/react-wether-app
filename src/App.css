@@ -47,7 +47,8 @@
 @media (max-width: 767.8px) {
   .App {
     min-width: 300px;
-    width: 80vw;
+    width: 90vw;
     margin: 0 auto;
+    padding: 1rem;
   }
 }

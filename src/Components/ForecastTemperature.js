@@ -12,7 +12,7 @@ const ForecastTemperature = ({temperature}) => {
     };
 
     return (
-        <p className="d-flex justify-content-between text-white text-center mb-0">
+        <p className="d-flex flex-column flex-md-row justify-content-between text-white text-center mb-0">
         <span className='temperature-max'>
            {maxTemperature()} 
         </span>
